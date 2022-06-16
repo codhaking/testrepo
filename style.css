@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+:root{
+	--Red: hsl(0, 100%, 74%); 
+	--Green: hsl(154, 59%, 51%);
+	--Blue: hsl(248, 32%, 49%);
+	--Dark-Blue: hsl(249, 10%, 26%);
+	--Grayish-Blue: hsl(246, 25%, 77%)
+}
+
+
+
+html{
+	height: 100%;
+	width: auto;
+}
+
+body{
+	font-size: 16px;
+}
+
+main{
+	display: grid;
+	grid-template-columns: 50% 50%;
+	background: url(bg-intro-desktop.png) no-repeat;
+	background-size: cover;
+	height: 100vh;
+	align-items: center;
+	padding: 100px;
+	background-color: var(--Red);
+	background-blend-mode: luminosity;
+	font-family:  'Poppins', sans-serif;
+}
+
+form{
+	display: flex;
+	flex-direction: column;
+	background-color: white;
+	justify-content: space-evenly;
+	padding: 30px;
+	border-radius: 10px;
+	height: 400px;
+	box-shadow: 0 5px rgba(181, 99, 103, 0.5);
+}
+
+form input, form button{
+	height: 40px;
+	border-radius: 5px;
+	border-width: 1px;
+	border-color: #EBF5DF;
+	border-style: solid;
+	font-weight: 600;
+	outline: none;
+	width: 100%;	
+}
+
+
+.form form input:focus {
+	border-style: solid;
+	border-width: 1px;
+	border-color: var(--Dark-Blue);
+}
+
+
+
+.long[data-error] .input{
+	border-color: #c92432;
+	color: #c92432;
+	background: url(icon-error.svg) no-repeat scroll 7px 7px;
+	background-position: 95% 50%;
+}
+
+.long[data-error]::after{
+	content: attr(data-error);
+	font-size: 0.5em;
+	color: hsl(0, 100%, 74%);
+	display: flex;
+	justify-content: flex-end;
+	font-style: italic;
+}
+
+
+form button{
+	background-color: var(--Green);
+	border-style: none;
+	color: white;
+	font-family: 'Poppins', sans-serif;
+	font-weight: 500;
+	cursor: pointer;
+}
+form input{
+	padding: 20px;
+	font-size: 0.75em;
+}
+
+.right_side > button {
+	height: 40px;
+	width: 100%;
+	border-radius: 5px;
+	border-style: none;
+	margin-bottom: 15px;
+	background-color: var(--Blue);
+	color: white;
+	box-shadow: 0 5px rgba(181, 99, 103, 0.5);
+}
+
+.left_side{
+	color: white;
+	padding:  90px;
+}
+
+h6{
+	color: var(--Grayish-Blue);
+	text-align: center;
+	font-size: 0.58rem;
+}
+
+form h6 {
+	font-weight: 500;
+}
+
+form h6 span{
+	color: var(--Red);
+	font-weight: 700;
+
+}
+
+.right_side{
+	margin-left: 70px;
+	margin-right: 70px;
+}
+
+/*
+Try to specify font weight and family. I feel default styling is affecting some of them
+especially the buttons in css*/
+
+.left_side h1{
+	font-weight: 700;
+	font-family: 'Poppins', sans-serif;
+}
+
+.left_side h5{
+	font-weight: 400;
+	font-family: 'Poppins', sans-serif;
+
+}
+.right_side > button {
+	font-weight: 700;
+	font-family: 'Poppins', sans-serif;
+}
+
+.right_side > button span{
+	font-weight: 500;
+	font-family: 'Poppins', sans-serif;
+	color: var(--Grayish-Blue);
+}
+
+
+
+main h1 {
+	line-height: 50px;
+	margin-bottom: 20px;
+	font-size: 2.5em;
+}
+
+@media (max-width: 375px){
+	main{
+	display: flex;
+	flex-direction: column;
+	background: url(bg-intro-mobile.png) no-repeat;
+	background-size: cover;
+	height: auto;
+	align-items: center;
+	background-color: var(--Red);
+	background-blend-mode: luminosity;
+	font-family:  'Poppins', sans-serif;
+	padding: 10px;
+}
+	.left_side{
+		padding: 10px;
+		width: 100%;
+		margin-top: 40px;
+	}
+	
+	main h1{
+		font-size: 1.7em;
+		text-align: center;
+		margin-top: 50px;
+	}
+	main h5{
+		text-align: center;
+		line-height: 25px;
+		font-weight: 700;
+	}
+
+	.right_side #this{
+		width: 90vw;
+		height: 80px;
+		margin-top: 40px;
+		border-radius: 10px;
+		border-bottom: 30px;
+	}
+
+	form{
+		height: 500px;
+		margin: 20px auto 50px;
+	}
+}
